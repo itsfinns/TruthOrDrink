@@ -13,6 +13,7 @@
                 Text="Truth Or Drink"
                 FontSize="34"
                 HorizontalOptions="Center"
+
                 TextColor="Black"
                  />
 
@@ -43,10 +44,22 @@
                AbsoluteLayout.LayoutBounds="-20, 750, 75, 150"
                Clicked="OnSettingsClicked"/>
 
+            <Label
+                Text="Instellingen"
+                FontSize="14"
+                TextColor="Black"
+                AbsoluteLayout.LayoutBounds="-20, 860, 75, 150"/>
+
             <ImageButton 
                Source="fake_qr.png"
                AbsoluteLayout.LayoutBounds="300, 750, 75, 150"
                Clicked="OnQrClicked"/>
+
+            <Label
+                Text="Scan-QR"
+                FontSize="18"
+                TextColor="Black"
+                AbsoluteLayout.LayoutBounds="300, 860, 75, 150"/>
 
         </AbsoluteLayout>
     </ScrollView>
