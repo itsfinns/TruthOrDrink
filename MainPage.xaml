@@ -13,7 +13,6 @@
                 Text="Truth Or Drink"
                 FontSize="34"
                 HorizontalOptions="Center"
-                Style="{StaticResource Headline}"
                 TextColor="Black"
                  />
 
@@ -39,10 +38,15 @@
                 HeightRequest="100"
                 CornerRadius="10"/>
 
-            <ImageButton
-                Source="ettings_app_icon.png"
-                Aspect="AspectFit"
-                AbsoluteLayout.LayoutBounds="20, 700"/>
+            <ImageButton 
+               Source="settings_app_icon.png"
+               AbsoluteLayout.LayoutBounds="-20, 750, 75, 150"
+               Clicked="OnSettingsClicked"/>
+
+            <ImageButton 
+               Source="fake_qr.png"
+               AbsoluteLayout.LayoutBounds="300, 750, 75, 150"
+               Clicked="OnQrClicked"/>
 
         </AbsoluteLayout>
     </ScrollView>

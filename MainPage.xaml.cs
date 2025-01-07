@@ -17,6 +17,16 @@
         {
 
         }
+
+        private void OnSettingsClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnQrClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
