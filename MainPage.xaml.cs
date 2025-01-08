@@ -23,9 +23,9 @@
 
         }
 
-        private void OnQrClicked(object sender, EventArgs e)
+        private async void OnQrClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ScanCode());
         }
 
     }

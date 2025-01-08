@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrink.MainPage"
              Title="Truth Or Drink"
+             NavigationPage.HasBackButton="False"
              BackgroundColor="{StaticResource BackgroundColor1}">
 
     <ScrollView>
