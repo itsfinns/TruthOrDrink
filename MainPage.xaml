@@ -3,25 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TruthOrDrink.MainPage"
              Title="Truth Or Drink"
-             BackgroundColor="#613c2c">
+             BackgroundColor="{StaticResource BackgroundColor1}">
 
     <ScrollView>
         <AbsoluteLayout
-            Padding="30,0">
+            Padding="20,-10">
 
             <Label
                 Text="Truth Or Drink"
                 FontSize="34"
                 HorizontalOptions="Center"
 
-                TextColor="Black"
+                TextColor="{StaticResource TextColorMain}"
                  />
 
             <Button
                 Text="Vrienden Toevoegen" 
                 FontSize="28"
-                Background="AliceBlue"
-                TextColor="Black"
+                BackgroundColor="{StaticResource ButtonColor2}"
+                TextColor="{StaticResource TextColorMain}"
                 Clicked="OnAddFriendsClicked"
                 AbsoluteLayout.LayoutBounds="20,150"
                 WidthRequest="300"
@@ -31,8 +31,8 @@
             <Button
                 Text="Sessie Starten" 
                 FontSize="28"
-                Background="AntiqueWhite"
-                TextColor="Black"
+                BackgroundColor="{StaticResource ButtonColor1}"
+                TextColor="{StaticResource TextColorMain}"
                 Clicked="OnStartSessionClicked"
                 AbsoluteLayout.LayoutBounds="20,350"
                 WidthRequest="300"
@@ -47,7 +47,7 @@
             <Label
                 Text="Instellingen"
                 FontSize="14"
-                TextColor="Black"
+                TextColor="{StaticResource TextColorMain}"
                 AbsoluteLayout.LayoutBounds="-20, 860, 75, 150"/>
 
             <ImageButton 
@@ -58,7 +58,7 @@
             <Label
                 Text="Scan-QR"
                 FontSize="18"
-                TextColor="Black"
+                TextColor="{StaticResource TextColorMain}"
                 AbsoluteLayout.LayoutBounds="300, 860, 75, 150"/>
 
         </AbsoluteLayout>

@@ -5,6 +5,14 @@
              x:Class="TruthOrDrink.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Color x:Key="BackgroundColor1">#FFD3E8</Color>
+            <Color x:Key="BackgroundColor2">#FFEDD5</Color>
+            <Color x:Key="ButtonColor1">#FF6F61</Color>
+            <Color x:Key="ButtonColor2">#6B5B95</Color>
+            <Color x:Key="ButtonColor3">#88B04B</Color>
+            <Color x:Key="TextColorMain">#4A4A4A</Color>
+            <Color x:Key="TextColorSecond">#FFFFFF</Color>
+            <Color x:Key="TextColorPop">#FF6</Color>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
