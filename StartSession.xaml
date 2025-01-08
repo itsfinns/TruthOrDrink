@@ -26,7 +26,7 @@
             <ImageButton x:Name="Star3" Source="star_empty.png" Clicked="OnStarClicked" WidthRequest="50" HeightRequest="50"/>
             <ImageButton x:Name="Star4" Source="star_empty.png" Clicked="OnStarClicked" WidthRequest="50" HeightRequest="50"/>
             <ImageButton x:Name="Star5" Source="star_empty.png" Clicked="OnStarClicked" WidthRequest="50" HeightRequest="50"/>
-            
+
         </HorizontalStackLayout>
 
         <Button
