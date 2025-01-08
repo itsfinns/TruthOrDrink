@@ -13,9 +13,9 @@
 
         }
 
-        private void OnStartSessionClicked(object sender, EventArgs e)
+        private async void OnStartSessionClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new StartSession());
         }
 
         private async void OnSettingsClicked(object sender, EventArgs e)
