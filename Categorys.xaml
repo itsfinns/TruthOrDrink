@@ -15,7 +15,7 @@
         <Button
             Margin="0,30,0,0"
             x:Name="TruthButton"
-            Text="Truth Or Dare"
+            Text="Truth"
             TextColor="{StaticResource TextColorSecond}"
             FontSize="26"
             BackgroundColor="{StaticResource ButtonColor1}"
