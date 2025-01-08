@@ -43,4 +43,9 @@ public partial class StartSession : ContentPage
         Star4.Source = currentRating >= 4 ? "star_full.png" : "star_empty.png";
         Star5.Source = currentRating >= 5 ? "star_full.png" : "star_empty.png";
     }
+
+    private async void OnNextButtonClicked(object sender, EventArgs e)
+	{
+        await Navigation.PushAsync(new Categorys());
+    }
 }

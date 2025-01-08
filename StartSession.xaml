@@ -28,7 +28,17 @@
             <ImageButton x:Name="Star5" Source="star_empty.png" Clicked="OnStarClicked" WidthRequest="50" HeightRequest="50"/>
             
         </HorizontalStackLayout>
-        
+
+        <Button
+            Margin="0,50,0,0"
+            Text="Volgende"
+            FontSize="20"
+            TextColor="{StaticResource TextColorMain}"
+            BackgroundColor="{StaticResource BackgroundColor1}"
+            WidthRequest="250"
+            VerticalOptions="End"
+            Clicked="OnNextButtonClicked"/>
+
     </VerticalStackLayout>
     
 </ContentPage>
