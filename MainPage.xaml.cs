@@ -18,9 +18,9 @@
 
         }
 
-        private void OnSettingsClicked(object sender, EventArgs e)
+        private async void OnSettingsClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new SettingsPage());
         }
 
         private async void OnQrClicked(object sender, EventArgs e)
