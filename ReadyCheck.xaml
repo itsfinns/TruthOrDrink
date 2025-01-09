@@ -19,6 +19,14 @@
             TextColor="{StaticResource TextColorMain}"
             VerticalOptions="Center"
             HorizontalOptions="Center"/>
+                                            <!--onderstaande 2 misschien nog in een horizontal stack zetten voor vizueel-->
+        <Label
+            Padding="0,50,0,0"
+            Text="Gekozen categorie:"
+            FontSize="24"
+            TextColor="{StaticResource TextColorMain}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
 
 
         <Label x:Name="SelectedCategoryLabel" FontSize="20" TextColor="{StaticResource TextColorMain}" HorizontalOptions="Center" Margin="0,10,0,0"/>
