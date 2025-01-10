@@ -12,27 +12,31 @@ public partial class GamePage : ContentPage
 		InitializeComponent();
 
         string ChosenCategory = (Application.Current as App).chosenCategory; //deze pakt vanuit app.xaml.cs de waarde van de gekozen categorie, zodat die ook hier weer gebruikt kan worden.
+
     }
 
     private async void OnDrinkClicked(object sender, EventArgs e)
 	{
         string ChosenCategory = (Application.Current as App).chosenCategory;
 
+
+        string currentRating = Convert.ToString(StartSession.CurrentRating);  //Haalt de sterren rating uit StartSession en zet om naar string ivm Display Alart functie
+
         if (ChosenCategory == "Truth")
         {
-            DisplayAlert("Actie", ChosenCategory, "OK");
+            DisplayAlert("Aantal slokken:", currentRating , "OK");
         }
         else if (ChosenCategory == "Dare")
         {
-            DisplayAlert(Title, ChosenCategory, "OK");
+            DisplayAlert("Aantal slokken", currentRating, "OK");
         }
         else if (ChosenCategory == "WouldYouRather")
         {
-            DisplayAlert(Title, ChosenCategory, "OK");
+            DisplayAlert("Aantal slokken", currentRating, "OK");
         }
         else if (ChosenCategory == "Mixed")
         {
-            DisplayAlert(Title, ChosenCategory, "ok");
+            DisplayAlert("Aantal slokken", currentRating, "ok");
         }
     }
 

@@ -5,6 +5,8 @@
     {
         public string chosenCategory { get; set; }
 
+        //public int currentRating { get; set; }
+
         public App()
         {
             InitializeComponent();
