@@ -1,12 +1,12 @@
-using System.Net.Http;
-using Newtonsoft.Json.Linq;
+using System.Net.Http;  //zodat http links gebruikt kunnen worden
+using Newtonsoft.Json.Linq;  //voor parsen
 using System;
 
 namespace TruthOrDrink;
 
 public partial class GamePage : ContentPage
 {
-    private static readonly HttpClient client = new HttpClient();
+    private static readonly HttpClient client = new HttpClient();  //maakt een readonly naar een http link
 	public GamePage()
 	{
 		InitializeComponent();
@@ -24,24 +24,160 @@ public partial class GamePage : ContentPage
 
         if (ChosenCategory == "Truth")
         {
-            DisplayAlert("Aantal slokken:", currentRating , "OK");
+            DisplayAlert("Aantal slokken:", currentRating, "OK");
+
+            try
+            {
+                string apiUrl = "https://api.truthordarebot.xyz/v1/truth";
+
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+                response.EnsureSuccessStatusCode(); // maakt een exception als de statuscode geen succes is
+
+                string jsonResult = await response.Content.ReadAsStringAsync();
+
+                //resultaat parsen van json naar string
+                var jsonObject = JObject.Parse(jsonResult);
+                string question = jsonObject["question"]?.ToString();
+
+                QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+            }
+            catch (Exception ex)
+            { QuestionLabel.Text = ex.Message; }
+
+
         }
         else if (ChosenCategory == "Dare")
         {
-            DisplayAlert("Aantal slokken", currentRating, "OK");
+            DisplayAlert("Aantal slokken:", currentRating, "OK");
+
+            try
+            {
+                string apiUrl = "https://api.truthordarebot.xyz/api/dare";
+
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+                response.EnsureSuccessStatusCode(); // maakt een exception als de statuscode geen succes is
+
+                string jsonResult = await response.Content.ReadAsStringAsync();
+
+                //resultaat parsen van json naar string
+                var jsonObject = JObject.Parse(jsonResult);
+                string question = jsonObject["question"]?.ToString();
+
+                QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+            }
+            catch (Exception ex)
+            { QuestionLabel.Text = ex.Message; }
+
+
         }
         else if (ChosenCategory == "WouldYouRather")
         {
-            DisplayAlert("Aantal slokken", currentRating, "OK");
+            DisplayAlert("Aantal slokken:", currentRating, "OK");
+
+            try
+            {
+                string apiUrl = "https://api.truthordarebot.xyz/api/wyr";
+
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+                response.EnsureSuccessStatusCode(); // maakt een exception als de statuscode geen succes is
+
+                string jsonResult = await response.Content.ReadAsStringAsync();
+
+                //resultaat parsen van json naar string
+                var jsonObject = JObject.Parse(jsonResult);
+                string question = jsonObject["question"]?.ToString();
+
+                QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+            }
+            catch (Exception ex)
+            { QuestionLabel.Text = ex.Message; }
         }
+
+
         else if (ChosenCategory == "Mixed")
         {
-            DisplayAlert("Aantal slokken", currentRating, "ok");
+            DisplayAlert("Aantal slokken:", currentRating, "ok");
         }
     }
 
+    // hier onder is beantwoorden
+
     private async void OnAnwserClicked(object sender, EventArgs e)
 	{
-        await Navigation.PushAsync(new GamePage());
+        string ChosenCategory = (Application.Current as App).chosenCategory;
+
+        if (ChosenCategory == "Truth")
+        {
+
+            try
+            {
+                string apiUrl = "https://api.truthordarebot.xyz/v1/truth";
+
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+                response.EnsureSuccessStatusCode(); // maakt een exception als de statuscode geen succes is
+
+                string jsonResult = await response.Content.ReadAsStringAsync();
+
+                //resultaat parsen van json naar string
+                var jsonObject = JObject.Parse(jsonResult);
+                string question = jsonObject["question"]?.ToString();
+
+                QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+            }
+            catch (Exception ex)
+            { QuestionLabel.Text = ex.Message; }
+
+
+        }
+        else if (ChosenCategory == "Dare")
+        {
+
+            try
+            {
+                string apiUrl = "https://api.truthordarebot.xyz/api/dare";
+
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+                response.EnsureSuccessStatusCode(); // maakt een exception als de statuscode geen succes is
+
+                string jsonResult = await response.Content.ReadAsStringAsync();
+
+                //resultaat parsen van json naar string
+                var jsonObject = JObject.Parse(jsonResult);
+                string question = jsonObject["question"]?.ToString();
+
+                QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+            }
+            catch (Exception ex)
+            { QuestionLabel.Text = ex.Message; }
+
+
+        }
+        else if (ChosenCategory == "WouldYouRather")
+        {
+
+            try
+            {
+                string apiUrl = "https://api.truthordarebot.xyz/api/wyr";
+
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+                response.EnsureSuccessStatusCode(); // maakt een exception als de statuscode geen succes is
+
+                string jsonResult = await response.Content.ReadAsStringAsync();
+
+                //resultaat parsen van json naar string
+                var jsonObject = JObject.Parse(jsonResult);
+                string question = jsonObject["question"]?.ToString();
+
+                QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+            }
+            catch (Exception ex)
+            { QuestionLabel.Text = ex.Message; }
+        }
+
+
+        else if (ChosenCategory == "Mixed")
+        {
+
+        }
     }
 }
