@@ -10,7 +10,7 @@ public partial class AddPlayers : ContentPage
 	public AddPlayers(LocalDBService dbService)
     {
 		InitializeComponent();
-		_dbService = dbService;
+		_dbService = dbService ?? throw new ArgumentNullException(nameof(dbService));
 		Task.Run(async () => listView.ItemsSource = await _dbService.GetPlayers());
 	}
 
@@ -22,7 +22,7 @@ public partial class AddPlayers : ContentPage
 		{
 			await _dbService.Create(new Player
 			{
-				Name = NameEntry.Text
+				PlayerName = NameEntry.Text
 			});
 		}
 		else
@@ -30,7 +30,7 @@ public partial class AddPlayers : ContentPage
 			await _dbService.Update(new Player
 			{
 				Id = _editPlayerId,
-				Name = NameEntry.Text
+				PlayerName = NameEntry.Text
 			});
 
 			_editPlayerId = 0;
@@ -48,13 +48,13 @@ public partial class AddPlayers : ContentPage
 
 		switch (action)
 		{
-			case "Edit":
+			case "Bewerken":
 				_editPlayerId = player.Id;
-				NameEntry.Text = player.Name;
+				NameEntry.Text = player.PlayerName;
 
 				break;
 
-			case "Delete":
+			case "Verwijderen":
 				await _dbService.Delete(player);
 				listView.ItemsSource = await _dbService.GetPlayers();
 

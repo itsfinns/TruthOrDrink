@@ -7,17 +7,25 @@ namespace TruthOrDrink;
 public partial class GamePage : ContentPage
 {
     private static readonly HttpClient client = new HttpClient();  //maakt een readonly naar een http link
-	public GamePage()
+
+    private LocalDBService _localDBService;
+
+    public GamePage()
 	{
 		InitializeComponent();
+
+        _localDBService = new LocalDBService(); //haalt database service binnen
 
         string ChosenCategory = (Application.Current as App).chosenCategory; //deze pakt vanuit app.xaml.cs de waarde van de gekozen categorie, zodat die ook hier weer gebruikt kan worden.
 
     }
 
     private async void OnDrinkClicked(object sender, EventArgs e)
-	{
+    {
         string ChosenCategory = (Application.Current as App).chosenCategory;
+
+        string randomPlayerName = await _localDBService.GetRandomPlayerNameAsync();  //haal random naam binnen
+        RandomPlayerName.Text = randomPlayerName ?? "Geen speler gevonden.";  //wijst random naam toe
 
 
         string currentRating = Convert.ToString(StartSession.CurrentRating);  //Haalt de sterren rating uit StartSession en zet om naar string ivm Display Alart functie
@@ -106,6 +114,9 @@ public partial class GamePage : ContentPage
 	{
         string ChosenCategory = (Application.Current as App).chosenCategory;
 
+        string randomPlayerName = await _localDBService.GetRandomPlayerNameAsync();  //haal random naam binnen
+        RandomPlayerName.Text = randomPlayerName ?? "Geen speler gevonden.";  //wijs random naam toe
+
         if (ChosenCategory == "Truth")
         {
 
@@ -123,6 +134,7 @@ public partial class GamePage : ContentPage
                 string question = jsonObject["question"]?.ToString();
 
                 QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+
             }
             catch (Exception ex)
             { QuestionLabel.Text = ex.Message; }
@@ -146,6 +158,7 @@ public partial class GamePage : ContentPage
                 string question = jsonObject["question"]?.ToString();
 
                 QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+
             }
             catch (Exception ex)
             { QuestionLabel.Text = ex.Message; }
@@ -169,6 +182,7 @@ public partial class GamePage : ContentPage
                 string question = jsonObject["question"]?.ToString();
 
                 QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+
             }
             catch (Exception ex)
             { QuestionLabel.Text = ex.Message; }

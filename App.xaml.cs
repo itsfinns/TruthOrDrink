@@ -13,7 +13,9 @@
         {
             InitializeComponent();
 
+            DbService = new LocalDBService();
             MainPage = new NavigationPage(new MainPage());
+            
         }
     }
 }

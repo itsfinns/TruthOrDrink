@@ -37,5 +37,24 @@ namespace TruthOrDrink
         {
             await _connection.DeleteAsync(player);
         }
+
+        public async Task<string> GetRandomPlayerNameAsync()
+        {
+            var players = await _connection.Table<Player>().ToListAsync();
+
+            if (players == null || players.Count == 0)
+            {
+                return null; // als players leeg is
+            }
+
+            var random = new Random();
+            var randomIndex = random.Next(players.Count);
+
+            return players[randomIndex].PlayerName; // geeft een random naam terug
+        }
+
+
+
+
     }
 }

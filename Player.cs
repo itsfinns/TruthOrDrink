@@ -17,6 +17,6 @@ namespace TruthOrDrink
         [SQLite.Column("id")]
         public int Id { get; set; }
         [SQLite.Column("player")]
-        public string Name { get; set; }
+        public string PlayerName { get; set; }
     }
 }

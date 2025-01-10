@@ -18,7 +18,8 @@
 
         <Label
             Margin="0,25,0,0"
-            Text="Naam van willekeurige speler"
+            x:Name="RandomPlayerName"
+            Text="Willekeurge spelers naam"
             TextColor="{StaticResource TextColorMain}"
             FontSize="24"
             VerticalOptions="Center" 
