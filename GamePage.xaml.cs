@@ -11,13 +11,21 @@ public partial class GamePage : ContentPage
     private LocalDBService _localDBService;
 
     public GamePage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
         _localDBService = new LocalDBService(); //haalt database service binnen
 
         string ChosenCategory = (Application.Current as App).chosenCategory; //deze pakt vanuit app.xaml.cs de waarde van de gekozen categorie, zodat die ook hier weer gebruikt kan worden.
 
+    }
+
+    private void VibratePhone() //geeft trilling functie
+    {
+        int secondsToVibrate = Random.Shared.Next(1, 1);
+        TimeSpan vibrationLength = TimeSpan.FromSeconds(secondsToVibrate);
+
+        Vibration.Default.Vibrate(vibrationLength);
     }
 
     private async void OnDrinkClicked(object sender, EventArgs e)
@@ -26,6 +34,7 @@ public partial class GamePage : ContentPage
 
         string randomPlayerName = await _localDBService.GetRandomPlayerNameAsync();  //haal random naam binnen
         RandomPlayerName.Text = randomPlayerName ?? "Geen speler gevonden.";  //wijst random naam toe
+        VibratePhone();
 
 
         string currentRating = Convert.ToString(StartSession.CurrentRating);  //Haalt de sterren rating uit StartSession en zet om naar string ivm Display Alart functie
