@@ -17,6 +17,8 @@ namespace TruthOrDrink
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<LocalDBService>();
+
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
