@@ -5,6 +5,7 @@
              Title=""
              BackgroundColor="{StaticResource BackgroundColor1}">
     <VerticalStackLayout>
+        
         <Label 
             Text="Voeg spelers toe"
             FontSize="34"
@@ -12,8 +13,37 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
+        <Entry x:Name="NameEntry" Placeholder="Naam..."/>
+        <Button x:Name="addButton" Text="Toevoegen" TextColor="{StaticResource TextColorMain}" BackgroundColor="Green" WidthRequest="100" Clicked="onAddClicked"/>
+
+        <Label
+            Margin="0,20,0,0"
+            Text="Spelers"
+            FontSize="22"
+            TextColor="{StaticResource TextColorMain}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <ListView x:Name="listView" FlexLayout.Grow="1" HasUnevenRows="True" ItemTapped="listView_ItemTapped">  <!--Onderstaande structuur is enige mogelijkheid om de lijst functie werkend te houden tot nu toe-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout>
+                            <Label Margin="0,20,0,0" Text="{Binding PlayerName}" FontSize="18" TextColor="{StaticResource TextColorMain}"/>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            
+
+        </ListView>
+
+        <Label Margin="0,20,0,0" Text="{Binding PlayerName}" FontSize="18" TextColor="{StaticResource TextColorMain}"/>
+
+
         <Button
-            Margin="0,50,0,0"
+            Margin="0,60,0,0"
             Text="Volgende"
             FontSize="20"
             TextColor="{StaticResource TextColorMain}"
