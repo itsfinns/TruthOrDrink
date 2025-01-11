@@ -1,6 +1,7 @@
 using System.Net.Http;  //zodat http links gebruikt kunnen worden
 using Newtonsoft.Json.Linq;  //voor parsen
 using System;
+using static System.Net.WebRequestMethods;
 
 namespace TruthOrDrink;
 
@@ -114,6 +115,32 @@ public partial class GamePage : ContentPage
         else if (ChosenCategory == "Mixed")
         {
             DisplayAlert("Aantal slokken:", currentRating, "ok");
+
+            try
+            {
+                List<string> apiUrls = new List<string>
+                {
+                    "https://api.truthordarebot.xyz/v1/truth",
+                    "https://api.truthordarebot.xyz/api/dare",
+                    "https://api.truthordarebot.xyz/api/wyr"
+                };
+
+                Random random = new Random();
+                string chosenApiUrl = apiUrls[random.Next(apiUrls.Count)];
+
+                HttpResponseMessage response = await client.GetAsync(chosenApiUrl);
+                response.EnsureSuccessStatusCode(); // maakt een exception als de statuscode geen succes is
+
+                string jsonResult = await response.Content.ReadAsStringAsync();
+
+                //resultaat parsen van json naar string
+                var jsonObject = JObject.Parse(jsonResult);
+                string question = jsonObject["question"]?.ToString();
+
+                QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+            }
+            catch (Exception ex)
+            { QuestionLabel.Text = ex.Message; }
         }
     }
 
@@ -200,7 +227,31 @@ public partial class GamePage : ContentPage
 
         else if (ChosenCategory == "Mixed")
         {
+            try
+            {
+                List<string> apiUrls = new List<string>
+                {
+                    "https://api.truthordarebot.xyz/v1/truth",
+                    "https://api.truthordarebot.xyz/api/dare",
+                    "https://api.truthordarebot.xyz/api/wyr"
+                };
 
+                Random random = new Random();
+                string chosenApiUrl = apiUrls[random.Next(apiUrls.Count)];
+
+                HttpResponseMessage response = await client.GetAsync(chosenApiUrl);
+                response.EnsureSuccessStatusCode(); // maakt een exception als de statuscode geen succes is
+
+                string jsonResult = await response.Content.ReadAsStringAsync();
+
+                //resultaat parsen van json naar string
+                var jsonObject = JObject.Parse(jsonResult);
+                string question = jsonObject["question"]?.ToString();
+
+                QuestionLabel.Text = question ?? "Geen vraag gevonden.";  //update het questionlabel
+            }
+            catch (Exception ex)
+            { QuestionLabel.Text = ex.Message; }
         }
     }
 }
