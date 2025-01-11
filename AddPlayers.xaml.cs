@@ -44,7 +44,7 @@ public partial class AddPlayers : ContentPage
 	private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
 	{
 		var player = (Player)e.Item;
-		var action = await DisplayActionSheet("Action", "Terug", null, "Bewerken", "Verwijderen");
+		var action = await DisplayActionSheet("Maak een keuze", "Terug", null, "Bewerken", "Verwijderen");
 
 		switch (action)
 		{
