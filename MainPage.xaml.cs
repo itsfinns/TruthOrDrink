@@ -8,9 +8,9 @@
             InitializeComponent();
         }
 
-        private void OnAddFriendsClicked(object sender, EventArgs e)
+        private async void OnProfileClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ProfilePage());
         }
 
         private async void OnStartSessionClicked(object sender, EventArgs e)

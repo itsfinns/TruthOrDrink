@@ -19,11 +19,11 @@
                  />
 
             <Button
-                Text="Vrienden Toevoegen" 
+                Text="Profiel" 
                 FontSize="28"
                 BackgroundColor="{StaticResource ButtonColor2}"
                 TextColor="{StaticResource TextColorMain}"
-                Clicked="OnAddFriendsClicked"
+                Clicked="OnProfileClicked"
                 AbsoluteLayout.LayoutBounds="20,150"
                 WidthRequest="300"
                 HeightRequest="100"

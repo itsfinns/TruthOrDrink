@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrink.ProfilePage"
+             Title="Profiel"
+             BackgroundColor="{StaticResource BackgroundColor2}">
+    <VerticalStackLayout>
+
+        <Label 
+            Margin="0,20,0,0"
+            Text="Profiel naam"
+            TextColor="{StaticResource TextColorMain}"
+            FontSize="24"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Image
+            Margin="0,20,0,0"
+            x:Name="ProfilePicture"
+            Source="pfp_blank.png"
+            HeightRequest="200"
+            WidthRequest="200"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Label
+            Margin="0,40,0,0"
+            Text="Level"
+            TextColor="{StaticResource TextColorMain}"
+            FontSize="24"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Label
+            Margin="0,10,0,0"
+            Text="33"
+            TextColor="{StaticResource TextColorMain}"
+            FontSize="28"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>
