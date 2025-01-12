@@ -10,6 +10,6 @@ public partial class ReadyCheck : ContentPage
 
     private async void OnStartClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new GamePage());  //aanpassen naar juiste pagina (deze staat er tijdelijk om functionaliteit te controleren)
+        await Navigation.PushAsync(new GamePage());  
     }
 }
