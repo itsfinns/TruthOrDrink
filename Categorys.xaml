@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrink.Categorys"
+             Title=""
+             BackgroundColor="{StaticResource BackgroundColor1}">
+    <VerticalStackLayout>
+        <Label 
+            Text="Kies een catagorie"
+            FontSize="34"
+            TextColor="{StaticResource TextColorMain}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button
+            Margin="0,30,0,0"
+            x:Name="TruthButton"
+            Text="Truth"
+            TextColor="{StaticResource TextColorSecond}"
+            FontSize="26"
+            BackgroundColor="{StaticResource ButtonColor1}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="90"
+            WidthRequest="300"
+            Clicked="OnTruthClicked"/>
+
+        <Button
+            Margin="0,30,0,0"
+            x:Name="DareButton"
+            Text="Dare"
+            TextColor="{StaticResource TextColorSecond}"
+            FontSize="26"
+            BackgroundColor="{StaticResource ButtonColor2}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="90"
+            WidthRequest="300"
+            Clicked="OnDareClicked"/>
+
+        <Button
+            Margin="0,30,0,0"
+            x:Name="WouldYouRatherButton"
+            Text="Would You Rather"
+            TextColor="{StaticResource TextColorSecond}"
+            FontSize="26"
+            BackgroundColor="{StaticResource ButtonColor3}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="90"
+            WidthRequest="300"
+            Clicked="OnWouldYouRatherClicked"/>
+
+        <Button
+            Margin="0,30,0,0"
+            x:Name="MixedButton"
+            Text="MIXED"
+            TextColor="{StaticResource TextColorSecond}"
+            FontSize="26"
+            BackgroundColor="#FFD700"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="90"
+            WidthRequest="300"
+            Clicked="OnMixedClicked"/>  
+    </VerticalStackLayout>
+</ContentPage>

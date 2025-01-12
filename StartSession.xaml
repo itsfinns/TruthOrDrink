@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrink.StartSession"
+             Title="Sessie Starten"
+             BackgroundColor="{StaticResource BackgroundColor2}">
+    <VerticalStackLayout>
+        <Label 
+            Text="Truth Or Drink"
+            FontSize="28"
+            TextColor="{StaticResource TextColorMain}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label
+            Text="Moeilijkheid"
+            FontSize="20"
+            TextColor="{StaticResource TextColorMain}"
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="Center"/>
+
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <ImageButton x:Name="Star1" Source="star_empty.png" Clicked="OnStarClicked" WidthRequest="50" HeightRequest="50"/>
+            <ImageButton x:Name="Star2" Source="star_empty.png" Clicked="OnStarClicked" WidthRequest="50" HeightRequest="50"/>
+            <ImageButton x:Name="Star3" Source="star_empty.png" Clicked="OnStarClicked" WidthRequest="50" HeightRequest="50"/>
+            <ImageButton x:Name="Star4" Source="star_empty.png" Clicked="OnStarClicked" WidthRequest="50" HeightRequest="50"/>
+            <ImageButton x:Name="Star5" Source="star_empty.png" Clicked="OnStarClicked" WidthRequest="50" HeightRequest="50"/>
+
+        </HorizontalStackLayout>
+
+        <Button
+            Margin="0,50,0,0"
+            Text="Volgende"
+            FontSize="20"
+            TextColor="{StaticResource TextColorMain}"
+            BackgroundColor="{StaticResource BackgroundColor1}"
+            WidthRequest="250"
+            VerticalOptions="End"
+            Clicked="OnNextButtonClicked"/>
+
+    </VerticalStackLayout>
+    
+</ContentPage>

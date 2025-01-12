@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TruthOrDrink.AddPlayers">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAIAAAAAACAAAAAAAAAAAAAAIAAAAAAAAAAI=</HashCode>
+      <FileName>AddPlayers.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.App">
+    <Position X="12.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.Categorys">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Categorys.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.GamePage">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAABAAAFAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>GamePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.LocalDBService">
+    <Position X="2" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAAAAAAAAQAAAAAAAAAAEAAEABAAAAAAAABAA=</HashCode>
+      <FileName>LocalDBService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.MainPage">
+    <Position X="12.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAABAAAAAAAAAAAAAAAAAAACAAAAQAAAAAA=</HashCode>
+      <FileName>MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.Player">
+    <Position X="16.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.ProfilePage">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProfilePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.ReadyCheck">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>ReadyCheck.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.ScanCode">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ScanCode.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.SettingsPage">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAA=</HashCode>
+      <FileName>SettingsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TruthOrDrink.StartSession">
+    <Position X="14.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACABAAAAAAAAACAAAAAIAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>StartSession.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

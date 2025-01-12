@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrink.GamePage"
+             Title=""
+             BackgroundColor="{StaticResource BackgroundColor1}">
+    <VerticalStackLayout Spacing="20">
+
+        <Label 
+            Margin="0,20,0,0"
+            Text="Truth Or Drink"
+            FontSize="34"
+            TextColor="{StaticResource TextColorMain}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            />
+
+
+        <Label
+            Margin="0,25,0,0"
+            x:Name="RandomPlayerName"
+            Text="Willekeurge spelers naam"
+            TextColor="{StaticResource TextColorMain}"
+            FontSize="24"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label
+            x:Name="QuestionLabel"
+            Text="Klik op Drink of Beantwoord om het spel te starten"
+            FontSize="18"
+            TextColor="{StaticResource TextColorMain}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <HorizontalStackLayout
+            Spacing="15"
+            Padding="10"
+            HorizontalOptions="Center">
+            <Button x:Name="Drink" Text="Drink" Clicked="OnDrinkClicked" HeightRequest="60" WidthRequest="150" BackgroundColor="Red" />
+            <Button x:Name="Anwser" Text="Beantwoord" Clicked="OnAnwserClicked" HeightRequest="60" WidthRequest="150" BackgroundColor="Green"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

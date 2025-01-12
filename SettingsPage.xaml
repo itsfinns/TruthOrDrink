@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthOrDrink.SettingsPage"
+             NavigationPage.HasBackButton="True"
+             Title="Instellingen"
+             BackgroundColor="{StaticResource BackgroundColor2}">
+    <VerticalStackLayout>
+        <Label 
+            Text="Instellingen"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="24"
+            TextColor="{StaticResource TextColorMain}"/>
+
+        <Label
+            Text="Meldingen"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize="18"
+            TextColor="{StaticResource TextColorMain}"/>
+
+        <ImageButton
+            x:Name="ToggleImageButton1"
+            Source="settings_on.png"
+            Clicked="OnSettingsClicked"
+            HeightRequest="100"
+            WidthRequest="100"/>
+    </VerticalStackLayout>
+</ContentPage>

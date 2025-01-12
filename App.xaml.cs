@@ -1,12 +1,19 @@
 ﻿namespace TruthOrDrink
 {
     public partial class App : Application
+
     {
+        public string chosenCategory { get; set; }
+
+        public LocalDBService DbService { get; private set; } //Deze is nodig om navigatie vanaf Categorys naar AddPlayers mogelijk te maken
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            DbService = new LocalDBService();
+            MainPage = new NavigationPage(new MainPage());
+            
         }
     }
 }
