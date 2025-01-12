@@ -64,6 +64,6 @@ public partial class AddPlayers : ContentPage
 
     private async void OnNextButtonClicked(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new GamePage());
+		await Navigation.PushAsync(new ReadyCheck());
 	}
 }
